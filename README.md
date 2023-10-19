@@ -18,18 +18,17 @@ A simple implementation of the Flappy Bird game in Python using the Pygame libra
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your_username/flappy-bird.git
-   ```
+```bash
+git clone https://github.com/your_username/flappy-bird.git
+```
 2. Install Pygame: 
-   ```bash
-   pip install pygame
-
-   ```
+```bash
+pip install pygame
+```
 3.   Run the game:
-   ```bash
-   python flappy_bird.py
-   ```
+```bash
+python flappy_bird.py
+```
    
 # Controls
  

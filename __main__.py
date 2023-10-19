@@ -8,7 +8,7 @@ pygame.mixer.init()
 pygame.init()
 pygame.display.set_caption("FlappyBird")
 
-E = 7
+E = 7   # correct pipe display error
 WHITE = (255, 255, 255)
 WIDTH, HEIGHT = 576, 1024
 BASE_HEIGHT = 150
@@ -28,24 +28,31 @@ BIRD_IMG1 = pygame.image.load(
        (str(project_dir)) +  "/sprites/yellowbird-midflap.png")
 BIRD_IMG2 = pygame.image.load(
        (str(project_dir)) + "/sprites/yellowbird-upflap.png")
+
 BIRD_IMAGES = [BIRD_IMG0, BIRD_IMG1, BIRD_IMG2]
+
 BIRD = pygame.transform.scale(BIRD_IMG1, (BIRD_WIDTH, BIRD_HEIGHT))
+
 GROUND = pygame.transform.scale(
     pygame.image.load(
        (str(project_dir)) + "/sprites/base.png"),
     (WIDTH, BASE_HEIGHT)
 )
+
 HIT_GROUND = pygame.USEREVENT + 1
+
 GAMEOVER = pygame.transform.scale(
     pygame.image.load(
        (str(project_dir)) + "/sprites/gameover.png"),
     (WIDTH//2 + 100, BASE_HEIGHT)
 )
+
 GAMESTART = pygame.transform.scale(
     pygame.image.load(
        (str(project_dir)) + "/sprites/message.png"),
     (WIDTH//2, BASE_HEIGHT * 3)
 )
+
 POINTS_FONT = pygame.font.SysFont('Montserrat', 100)
 BASE_WIDTH = GROUND.get_width()
 
@@ -180,8 +187,6 @@ def main(space_between_pies):
         if j % 3 == 0:
             bird_state = (bird_state + 1) % 3
 
-        if j == 1000:
-            j = 0
 
         base_x_pos -= base_move_speed
         if base_x_pos < -BASE_WIDTH:
@@ -189,7 +194,7 @@ def main(space_between_pies):
 
         if start:
             bird_body.y += 1 * bird_start_move_direct
-            if i == 20:                         # falowanie ptaka
+            if i == 20:                        
                 bird_start_move_direct *= -1
                 i = 0
             i += 1
